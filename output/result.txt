@@ -1,0 +1,3 @@
+ Score: 20
+Reason: While the candidate has relevant IT experience and technical skills, their expertise is primarily in SharePoint development and related areas, not Python, Django, REST APIs, or AWS. The candidate does not meet the 4+ years of experience requirement for this backend developer role.
+
