@@ -64,7 +64,7 @@ if st.button("Match Resumes with JD") and jd_file and resumes:
 
             resume_text = extract_text(resume_path)
 
-            prompt = f"""You are an expert hiring assistant. Score the following resume against the job description.
+prompt = f"""You are an expert hiring assistant. Score the following resume against the job description.
 
 Only output in this format:
 Score: <number>
