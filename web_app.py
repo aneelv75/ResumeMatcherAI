@@ -78,19 +78,18 @@ RESUME:
 
             # Extract score
             score = 0
-            reason = response_text.strip()
-            for line in response_text.splitlines():
-                if "score" in line.lower():
-                    try:
-                        import re
-match = re.search(r"\\b([1-9][0-9]?|100)\\b", line)
-if match:
-    score = int(match.group(1))
-    reason = response_text.replace(line, "").strip()
-                        reason = response_text.replace(line, "").strip()
-                        break
-                    except:
-                        score = 0
+            import re
+
+for line in response_text.splitlines():
+    if "score" in line.lower():
+        match = re.search(r"\b([1-9][0-9]?|100)\b", line)
+        if match:
+            score = int(match.group(1))
+            reason = response_text.replace(line, "").strip()
+        else:
+            score = 0
+        break
+
             output_data.append({
                 "Resume": resume_file.name,
                 "Score": score,
