@@ -82,7 +82,11 @@ RESUME:
             for line in response_text.splitlines():
                 if "score" in line.lower():
                     try:
-                        score = int(''.join(filter(str.isdigit, line)))
+                        import re
+match = re.search(r"\\b([1-9][0-9]?|100)\\b", line)
+if match:
+    score = int(match.group(1))
+    reason = response_text.replace(line, "").strip()
                         reason = response_text.replace(line, "").strip()
                         break
                     except:
